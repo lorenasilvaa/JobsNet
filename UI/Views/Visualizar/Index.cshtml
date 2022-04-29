@@ -1,0 +1,54 @@
+﻿
+<div class="row">
+
+    <a href="/Home">&larr; voltar</a>
+    <form method="POST" action="/visualizar/consultar" id="" enctype="multipart/form-data">
+        <h1>Consulta do Cadastro</h1>
+        <p>Para visualizar o seu currículo, informe o CPF e o número da Inscrição</p>
+        <p class="importante">* Informações obrigatórias</p>
+        <fieldset id="verificacao">
+            <legend>Verificação do Usuário</legend>
+            <p><label for="cCPF"><span style="color:red">*</span>CPF: </label><input type="number" required name="tCPF" id="cCPF" placeholder="Apenas dígitos" size="40" maxlength="9" /></p>
+            <p><label for="cInsc"><span style="color:red">*</span>Inscrição: </label><input type="number" required name="tInsc" id="cInsc" placeholder="Apenas dígitos" size="30" maxlength="9" /></p>
+        </fieldset>
+        <input type="submit" />
+        <input type="reset" class="btn btn-default" Style="margin-left:20px;" value="Limpar" />
+    </form>
+
+</div>
+
+@if (TempData["lista"] != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código Candidato</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Data de Nascimento</th>
+                <th>Telefone</th>
+                <th>E-mail</th>
+                <th>Endereço</th>
+                <th>Cargo Pretendido</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach (string item in TempData["lista"] as List<string>)
+                {
+                    <td style="border:1px solid black;">@item</td>
+
+                }
+            </tr>
+        </tbody>
+    </table>
+}
+@if (TempData["erros"] != null)
+{
+    <div class="alert alert-info" style="margin-top:15px;">
+        <p>@TempData["erros"] Para realizá-lo, <a href='/cadastro'> Clique aqui</a> </p>
+    </div>
+}
+
+
+

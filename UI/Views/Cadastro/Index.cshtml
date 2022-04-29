@@ -1,0 +1,39 @@
+﻿@Scripts.Render("~/Scripts/jquery-3.3.1.js")
+@Scripts.Render("~/Scripts/CEP2.js")
+
+<div class="row">
+
+
+    <a href="/Home">&larr; voltar</a>
+    
+        <h1>Cadastro de Currículo</h1>
+            <p> Para fazer parte de nosso banco de Talentos, realize a inscrição abaixo: </p>
+        <p class="importante">* Informações obrigatórias</p>
+        <form method="POST" action="/cadastro/criar" enctype="multipart/form-data">
+
+            <fieldset>
+                <legend>INDENTIFICAÇÃO DO CANDIDATO</legend>
+                <p><label for="cCpf"><span style="color:red">*</span>CPF:</label><input type="number" required name="tCpf" id="cCpf" size="30" placeholder="Apenas dígitos" maxlength="11" /></p>
+                <p><label for="cNome"><span style="color:red">*</span>Nome:</label><input type="text" required name="tNome" id="cNome" size="30" maxlength="50" placeholder="Nome completo" /></p>
+                <p><label for="cTelefone"><span style="color:red">*</span>Telefone:</label><input type="tel" required name="tTelefone" id="cTelefone" size="28" placeholder="Dígitos apenas" maxlength="14" /></p>
+                <p><label for="cMail"><span style="color:red">*</span>E-mail:</label><input type="email" name="tMail" id="cMail" size="30" maxlength="40" required placeholder="usuario@dominio" maxlength="40" /></p>
+                <p><label for="cNasc"><span style="color:red">*</span>Data de Nascimento:</label><input type="date" name="tNasc" id="cNasc" required /></p>
+            </fieldset>
+            <fieldset>
+                <legend>ENDEREÇO</legend>
+                <p><label for="cCep"><span style="color:red">*</span>CEP:</label><input type="text" required name="tCep" id="cCep" placeholder="Informe o CEP" size="30" maxlength="9" /></p>
+                <p><label for="cLogradouro"><span style="color:red">*</span>Logradouro:</label><input type="text" required name="tLogradouro" placeholder="Campo preenchido pelo CEP" size="30" id="cLogradouro" readonly maxlength="50" /></p>
+                <p><label for="cNumero"><span style="color:red">*</span>Número:</label><input type="number" required name="tNumero"  placeholder="Dígitos apenas"size="30" id="cNumero" /></p>
+                <p><label for="cBairro"><span style="color:red">*</span>Bairro:</label><input type="text" required name="tBairro" size="30" id="cBairro" placeholder="Campo preenchido pelo CEP" readonly maxlength="50" /></p>
+                <p><label for="cCidade"><span style="color:red">*</span>Cidade:</label><input type="text" required name="tCidade" size="30" id="cCidade" placeholder="Campo preenchido pelo CEP" readonly maxlength="50" /></p>
+                <p><label for="cEstado"><span style="color:red">*</span>Estado:</label><input type="text" required name="tEstado" size="30" id="cEstado" placeholder="Campo preenchido pelo CEP" readonly maxlength="2" /></p>
+            </fieldset>
+            <fieldset>
+                <legend>INFORMAÇÕES PROFISSIONAIS</legend>
+                <p><label for="cCargo"><span style="color:red">*</span>Cargo pretendido:</label><input type="text" required name="tCargo" id="cCargo" size="30" maxlength="50" placeholder="Cargo Pretendido" /></p>
+                <p><label for="cCurriculo"><span style="color:red">*</span>Selecionar Currículo:</label><input type="file" required name="tCurriculo" id="cCurriculo" /></p>
+            </fieldset>
+            <input Style="margin-left:90px;" class="btn btn-default" type="submit" value="Enviar">
+            <input Style="margin-left:40px;" type="reset" value="Limpar" class="btn btn-default">
+        </form>
+</div>

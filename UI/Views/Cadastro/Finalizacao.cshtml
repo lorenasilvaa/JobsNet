@@ -1,0 +1,15 @@
+﻿<div class="row">
+
+
+    <a href="/Home">&larr; voltar</a>
+
+    @if (TempData["sucesso"] != null)
+    {
+        <p>@TempData["sucesso"] </p>
+    }
+    else
+    {
+        <p>@TempData["erro"] </p>
+    }
+
+</div>
